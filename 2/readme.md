@@ -1,0 +1,1 @@
+[Day 2](https://vargasleticia.notion.site/Frontend-Est-tico-Atividades-Aula-2-4bae4e74ae724056a498ba75067de118)
