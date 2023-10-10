@@ -1,0 +1,103 @@
+/* ol, ul{
+    list-style-type: decimal;
+    padding: 0;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom,#1A1A64, #2d2d2d, #aa0505, #3870BD, #2EE366  );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+
+  
+    /* Dragable */
+      -webkit-user-drag: none;
+}
+body header{
+    background-color: #4b0908;
+    color: #F0F0F0;
+    padding: 5px;
+}
+
+body{
+    background-color: #b97d10;
+
+}
+main{
+    padding: 8px;
+}
+h1{
+    background-image: linear-gradient(to right, #aa0505,#fff, #3870BD);
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    color: transparent;
+
+}
+
+.aling{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ol{
+    background-color:#fbca03;
+    padding:0  25px;
+    border-radius: 8px;
+}
+
+li{
+    font-size: 18px;
+    margin: 10px 0;
+    padding: 0 5px;
+} 
+
+ol li:nth-child(1){
+    color: #1A1A64
+}
+
+ol li:nth-child(2){
+    color: #000
+}
+
+ol li:nth-child(3){
+    color: #aa0505
+}
+
+ol li:nth-child(4){
+    color: #3870BD
+}
+
+ol li:nth-child(5){
+    color: #2EE366
+}
+
+
+table{
+    border: 1px solid #fbca03;
+}
+th, td{
+    padding: 5px;
+    border: 1px solid #fbca03;
+}
+table thead th:nth-child(1){
+    background-color: #1849CA;
+}
+
+table thead th:nth-child(2){
+    background-color: #EC2004;
+}
+
+table tbody {
+    background-color: #fff;
+    color: black;
+}
+
