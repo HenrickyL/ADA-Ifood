@@ -1,0 +1,16 @@
+:root {
+    --cor-pai: #006400; /* Verde Escuro para o pai */
+    --cor-mae: #FF0000; /* Vermelho para a mãe */
+    --cor-filho: #0000FF; /* Azul para o filho adolescente */
+    --cor-filha: #FFFF00; /* Amarelo para a filha de 10 anos */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+    /* Dragable */
+      -webkit-user-drag: none;
+}
