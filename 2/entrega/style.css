@@ -1,8 +1,13 @@
 :root {
-    --cor-pai: #006400; /* Verde Escuro para o pai */
-    --cor-mae: #FF0000; /* Vermelho para a mãe */
+    --cor-pai: #089808; /* Verde Escuro para o pai */
+    --cor-mae: #b314b3; /* Vermelho para a mãe */
     --cor-filho: #0000FF; /* Azul para o filho adolescente */
-    --cor-filha: #FFFF00; /* Amarelo para a filha de 10 anos */
+    --cor-filha: #da920e; /* Amarelo para a filha de 10 anos */
+
+    --bkg-cor-pai: #08980850; /* Verde Escuro para o pai */
+    --bkg-cor-mae: #b314b350; /* Vermelho para a mãe */
+    --bkg-cor-filho: #0000FF50; /* Azul para o filho adolescente */
+    --bkg-cor-filha: #da920e50; /* Amarelo para a filha de 10 anos */
 }
 
 *{
@@ -14,3 +19,107 @@
     /* Dragable */
       -webkit-user-drag: none;
 }
+main{
+    padding: 0 8px;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #CACACA;
+    padding: 8px;
+}
+
+.align{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+table {
+    border-collapse: collapse;
+    border: 2px solid gray;
+    border-radius: 8px;
+}
+thead th, tr td:nth-child(1) {
+    width: 25%;
+}
+
+th, td{
+    border: 1px solid black;
+}
+th{
+    background-color: gray;
+}
+td, th{
+    padding:0 5px;
+}
+
+
+.pai{
+    color: var(--cor-pai);
+}
+
+td.pai, .pai .quad{
+    background-color: var(--bkg-cor-pai);
+}
+
+.mae{
+    color: var(--cor-mae);
+}
+
+td.mae, .mae .quad{
+    background-color: var(--bkg-cor-mae);
+}
+
+.filha{
+    color: var(--cor-filha);
+}
+
+td.filha, .filha .quad{
+    background-color: var(--bkg-cor-filha);
+}
+
+.filho{
+    color: var(--cor-filho);
+}
+
+td.filho, .filho .quad {
+    background-color: var(--bkg-cor-filho);
+}
+
+
+footer{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    padding: 8px;
+}
+div.legenda{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+div.legenda .quad{
+    width: 12px;
+    height: 12px;
+    border: 1px solid black;
+}
+
+
+
+
+ul, ol{
+    margin-left: 20px;
+    list-style-type: disc;
+    border: 2px solid gray;
+    padding: 5px  25px;
+    border-radius: 8px;
+}
+
+
+
+

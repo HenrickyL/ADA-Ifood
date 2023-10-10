@@ -3,96 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <title>Organização Familiar</title>
 </head>
 <body>
+    <header>
+        <h1>Organização Familiar</h1>
+    </header>
     
-    <h3>Supermercado:</h3>
-    <ul>
-        <li class="pai">Vegetais Variados</li>
-        <li class="pai">Peito de Frango</li>
-        <li class="mae">Pimentas Picantes</li>
-        <li class="filho">Frutas Variadas</li>
-        <li class="filha">Massas</li>
-        <li class="filha">Molho de Tomate</li>
-        <li class="todos">Leite e Derivados</li>
-        <li class="filho">Cereais e Granola</li>
-        <li class="todos">Ovos</li>
-        <li class="todos">Azeite de Oliva</li>
-    </ul>
+    <main>
+        <h3>Supermercado:</h3>
+        <div class="align">
+    
+            <ol>
+                <li class="pai">Vegetais Variados</li>
+                <li class="pai">Peito de Frango</li>
+                <li class="mae">Pimentas Picantes</li>
+                <li class="filho">Frutas Variadas</li>
+                <li class="filha">Massas</li>
+                <li class="filha">Molho de Tomate</li>
+                <li class="todos">Leite e Derivados</li>
+                <li class="filho">Cereais e Granola</li>
+                <li class="todos">Ovos</li>
+                <li class="todos">Azeite de Oliva</li>
+            </ol>
+        </div>
+    
+        <h3>Tarefas: </h3>
+        <div class="align">
+            <ul>
+                <li class="pai">Cozinhar o jantar na quarta-feira.</li>
+                <li class="pai">Praticar esportes três vezes durante a semana.</li>
+                <li class="pai">Levar o filho à escola na segunda-feira.</li>
+                
+                <li class="mae">Fazer compras de supermercado na terça-feira.</li>
+                <li class="mae">Cozinhar o almoço no domingo.</li>
+                <li class="mae">Ajudar a filha com as aulas de piano no domingo.</li>
+                
+                <li class="filho">Preparar seu lanche saudável para levar à escola todos os dias.</li>
+                <li class="filho">Fazer compras de supermercado com a mãe na terça-feira.</li>
+                <li class="filho">Praticar esportes duas vezes durante a semana.</li>
+                
+                <li class="filha">Praticar piano por 30 minutos todos os dias.</li>
+                <li class="filha">Ajudar a cozinhar o café da manhã na quinta-feira.</li>
+                <li class="filha">Praticar esportes uma vez durante a semana.</li>
+                
+                <li class="todos">Limpar a casa no sábado de manhã.</li>
+            </ul>
+        </div>
+    
+        <h3>Cardápio Semanal</h3>
+        <div class="align">
+    
+            <table >
+                <thead>
+                    <th></th>
+                    <th>Segunda-feira</th>
+                    <th>Terça-feira</th>
+                    <th>Quarta-feira</th>
+                    <th>Quinta-feira</th>
+                    <th>Sexta-feira</th>
+                    <th>Sábado</th>
+                    <th>Domingo</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>Café da Manhã</b></td>
+                        <td class="todos">Cereal com frutas</td>
+                        <td class="todos">Torradas com abacate</td>
+                        <td class="todos">Omelete de ovos com espinafre</td>
+                        <td class="todos">Panquecas de aveia com mel</td>
+                        <td class="todos">Smoothie de frutas e iogurte</td>
+                        <td class="todos">Torradas com manteiga de amendoim</td>
+                        <td class="todos">Cereal com frutas</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2"><b>Almoço</b></td>
+                        <td class="pai">Salada vegana</td>
+                        <td class="todos">Arroz integral com legumes</td>
+                        <td class="mae">Comida Mexicana</td>
+                        <td class="todos">Salada de atum e vegetais</td>
+                        <td class="filha">Pizza de Calabresa</td>
+                        <td class="todos">Sanduíches de frango grelhado</td>
+                        <td class="pai">Salada vegana</td>
+                    </tr>
+                    <tr>
+                        <td class="todos">Porco trinchado</td>
+                        <td class="filha">Espaguete com almôndegas</td>
+                        <td class="todos">Salmão com legumes</td>
+                        <td class="todos">Frango ao curry com arroz</td>
+                        <td class="pai">Pizza vegetariana</td>
+                        <td class="todos">Salmão com legumes</td>
+                        <td class="pai">Tofu com legumes</td>
+                    </tr>
+                    <tr>
+                        <td><b>Lanche</b></td>
+                        <td class="filho">Frutas variadas</td>
+                        <td class="todos">Frutas variadas</td>
+                        <td class="filho">Iogurte e granola</td>
+                        <td class="todos">Frutas variadas</td>
+                        <td class="mae">Vatapa</td>
+                        <td class="filho">Iogurte e granola</td>
+                        <td class="todos">Frutas variadas</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2"><b>Jantar</b></td>
+                        <td class="pai">Massa vegana com molho de tomate</td>
+                        <td class="todos">Peixe assado com legumes</td>
+                        <td class="pai">Macarrão integral com molho de tomate</td>
+                        <td class="todos">Frango grelhado com arroz</td>
+                        <td class="todos">Peixe com legumes e arroz</td>
+                        <td class="todos">Massa com molho de tomate</td>
+                        <td class="todos">Peixe assado com legumes</td>
+                    </tr>
+                    <tr>
+                        <td class="todos">Cubos de frango</td>
+                        <td class="todos">Frango ao curry com arroz</td>
+                        <td class="todos">Risoto de cogumelos</td>
+                        <td class="todos">Salmão com legumes</td>
+                        <td class="todos">Tofu grelhado com quinoa</td>
+                        <td class="pai">Lasanha vegetariana</td>
+                        <td class="pai">Tofu com legumes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    
 
-    <h3>Cardápio Semanal</h3>
-    <table border="1">
-        <thead>
-            <th>Dias da semana</th>
-            <th>Segunda-feira</th>
-            <th>Terça-feira</th>
-            <th>Quarta-feira</th>
-            <th>Quinta-feira</th>
-            <th>Sexta-feira</th>
-            <th>Sábado</th>
-            <th>Domingo</th>
+    
 
-        </thead>
-        <tbody>
-            <tr>
-                <td>Café da Manhã</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td colspan="2"></td>
-            </tr>
-            <tr>
-                <td rowspan="2">Almoço</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Lanche</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td colspan="2"></td>
-            </tr>
-            <tr>
-                <td rowspan="2">Jantar</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+
+    
 </body>
+<footer>
+    <div class="legenda pai">
+        <div class="quad"></div>
+        <span>Pai</span> 
+    </div>
+    <div class="legenda mae">
+        <div class="quad"></div>
+        <span>Mãe</span> 
+    </div>
+    <div class="legenda filho">
+        <div class="quad"></div>
+        <span>Filho Adolescente</span> 
+    </div>
+    <div class="legenda filha">
+        <div class="quad"></div>
+        <span>Filha de 10 anos</span> 
+    </div>
+
+</footer>
 </html>
