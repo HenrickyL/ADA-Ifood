@@ -39,12 +39,9 @@ header{
 }
 table {
     border-collapse: collapse;
-    border: 2px solid gray;
-    border-radius: 8px;
+    width: 80%;
 }
-thead th, tr td:nth-child(1) {
-    width: 25%;
-}
+
 
 th, td{
     border: 1px solid black;
@@ -116,8 +113,12 @@ ul, ol{
     margin-left: 20px;
     list-style-type: disc;
     border: 2px solid gray;
-    padding: 5px  25px;
+    padding: 5px  50px;
     border-radius: 8px;
+}
+
+ol{
+    list-style-type: decimal;
 }
 
 
