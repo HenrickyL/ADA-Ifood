@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="./img/icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
+    <title>Ajude a Causa</title>
+</head>
+<body>
+    <header>
+        <img src="img/icon.png" alt="logo">
+        <h1>Ajude a Causa</h1>
+    </header>
+    <main>
+        <form id="form" action="" method="post">
+            <main>
+                <div class="field">
+                    <label for="">Nome:</label>
+                    <input type="text">
+                </div>
+            </main>
+
+            <button id="bt-submit" type="submit">Enviar</button>
+        </form>
+
+    </main>
+</body>
+
+<script>
+    const form = document.getElementById("form");
+    form.addEventListener('submit', (event)=>{
+        event.preventDefault();
+    })
+
+</script>
+</html>
