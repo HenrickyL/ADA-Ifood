@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="imagex/png" href="./img/icon.png">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <title>Ajude a Causa</title>
 </head>
 <body>
@@ -17,13 +19,60 @@
     </header>
     <main>
         <form id="form" action="" method="post">
+            <h2>Cadastro</h2>
             <main>
-                <div class="field">
-                    <label for="">Nome:</label>
-                    <input type="text">
+                <div class="field-group-half">
+                    <div class="field">
+                        <label for="name">Nome Completo:</label>
+                        <input name="name" type="text" placeholder="John Doe" required>
+                    </div>
+                    <div class="field">
+                        <label for="idade">Idade:</label>
+                        <input name="idade" type="number" min="0" max="200" required>
+                    </div>
                 </div>
+                <div class="field">
+                    <label for="email">Email:</label>
+                    <input name="email" type="email" placeholder="JohnDoe@mail.com" required>
+                </div>
+                <div class="field-group-half">
+                    <div class="field">
+                        <legend>Categoria de Inscrição:</legend>
+                        <fieldset>
+                            <div class="field-group">
+                                <input type="radio" id="3run" name="categoria" value="3RUN" checked> 
+                                <label for="3run">[3RUN] Corrida 3km</label>
+                            </div>
+                            <div class="field-group">
+                                <input type="radio" id="5run" name="categoria" value="5RUN"> 
+                                <label for="5run">[5RUN] Corrida 5km</label>
+                            </div>
+                            <div class="field-group">
+                                <input type="radio" id="4walk" name="categoria" value="4WALK"> 
+                                <label for="4walk">[4WALK] Caminhada 4km</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="field">
+                        <label for="tipoCamisa">Tamanho da Camiseta:</label>
+                        <select name="tipoCamisa">
+                            <option value="P">P</option>
+                            <option value="M" selected>M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                            <option value="XG">XG</option>
+    
+                        </select>
+                    </div>
+                    
+                    
+                </div>
+                <div class="field half30">
+                    <label for="doacao">Quanto quer Doar?</label>
+                    <input type="number" name="doacao" placeholder="R$ 5,00" min="0"> 
+                </div>
+                
             </main>
-
             <button id="bt-submit" type="submit">Enviar</button>
         </form>
 

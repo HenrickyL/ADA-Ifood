@@ -31,28 +31,35 @@ h1, p, a, body, span{
     color: var(--black-1);
     font-family: 'Poppins', sans-serif;
 }
-
-header{
+body{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+    font-family: 'Poppins', sans-serif;
+}
+body header{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: left;
     gap: 8px;
+    width: 100%;
     padding: 8px 12px;
     background-color: var(--primary-light);
 }
 header h1{
     font-size: xx-large;
     text-transform: uppercase;
-    font-family: "Roboto Slab", sans-serif;
+    font-family: 'Permanent Marker', cursive;
 }
 header img{
     width: 4rem;
 }
-body{
-    background-color: var(--background);
-    font-family: 'Poppins', sans-serif;
-}
+
 
 main{
     display: flex;
@@ -68,12 +75,15 @@ form{
     align-self: center;
     align-items: center;
     background-color: white;
-    width: 50rem;
-    height: 50rem;
+    min-width: 20rem;
+    width: 75%;
+    max-width: 50rem;
+    max-height: 50rem;
     padding: 16px;
     border-radius: 8px;
     background-color: var(--white-1);
     border: 1px solid var(--black-3);
+    gap: 32px;
 }
 form main{
     display: flex;
@@ -81,31 +91,15 @@ form main{
     align-items: flex-start;
     justify-content: start;
     width: 100%;
-    min-height: 45rem;
+    max-height: 45rem;
 }
-label{
+label, legend{
     font-weight: bold;
 }
 
-.field{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 8px;
-}
 
-.field-group{
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-}
 
-input, button{
+input, button, select{
     padding: 8px 12px;
     border-radius: 8px;
     border: 2px solid transparent;
@@ -113,10 +107,9 @@ input, button{
     transition: 500ms;
     font-size: large;
     font-family: sans-serif;
-}
-input{
     width: 100%;
 }
+
 button{
     width: 16rem;
     font-weight: bold;
@@ -124,16 +117,16 @@ button{
     background-color: var(--tertiary);
 }
 
-input:hover{
+input:hover, select:hover{
     border: 2px solid var(--white-3);
 }
 
-input:focus{
+input:focus, select:focus{
     border: 2px solid var(--primary);
     background-color: white;
     border-radius: 10px;
 }
-input:disabled{
+input:disabled, select:disabled, button:disabled{
     background-color: var(--white-3);
 }
 
@@ -145,4 +138,53 @@ button:active{
     transition: 250ms;
     border: 2px solid black;
     background-color: var(--secondary);
+}
+
+
+
+
+
+.field-group, .field-group-half{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.field-group-half .field, .field-group-half .field-group {
+    flex: 3;
+}
+.field-group-half .field:last-child, .field-group-half .field-group:last-child{
+    
+    flex: 1;
+}
+.field{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 16px;
+    gap: 8px;
+}
+
+input[type="radio"] {
+    width: max-content;
+}
+
+input[type="radio"]:checked {
+    accent-color: var(--primary);
+}
+.half30{
+    width: 30%;
 }
