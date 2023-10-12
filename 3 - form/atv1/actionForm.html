@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>novo documento</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    let data = window.location.search
+    var values = data.replace('?','').split('&')
+    let result = {}
+    values.forEach( s => {
+        let [key, value] = s.split('=')
+        result[decodeURI(key)] = value
+    })
+    console.log(result)
+
+</script>
+</html>
