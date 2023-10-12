@@ -1,0 +1,136 @@
+<!-- https://vargasleticia.notion.site/Frontend-Est-tico-Atividades-Aula-3-96a4679dfdd84138a3468d41c9b55a3e?pvs=4 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="post">
+        <div>
+            <label for="fullName">Qual seu Nome Completo?</label>
+            <input id="fullName" type="text">
+        </div>
+        <div>
+            <label for="travelDate">Quando quer viajar?</label>
+            <input id="travelDate" type="date">
+        </div>
+        <div>
+            <label for="numPassengers">Quando quer passageiros?</label>
+            <input id="numPassengers" type="number">
+        </div>
+        <div>
+            <label for="country">Onde você mora?</label>
+            <select name="country" id="country">
+                <option value="br">Brasil</option>
+                <option value="pt">Portugal</option>
+                <option value="usa">Estados Unidos</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="email">Quando seu E-mail?</label>
+            <input id="email" type="email">
+        </div>
+
+        <div>
+            <span>Tipo de Refeição:</span>
+            <fieldset>
+                <div>
+                    <label for="padrão">Padrão</label>
+                    <input checked type="radio" name="padrão" id="padrão">
+                </div>
+                <div>
+                    <label for="vegetariana">Vegetariana</label>
+                    <input type="radio" name="vegetariana" id="vegetariana">
+                </div>
+                <div>
+                    <label for="noGluten">Sem Glúten</label>
+                    <input type="radio" name="noGluten" id="noGluten">
+                </div>
+            </fieldset>
+        </div>
+
+        <div>
+            <label for="cell">Qual seu Celular?</label>
+            <input id="cell" type="tel" placeholder="(ddd) 9 8888-8888">
+        </div>
+        <div>
+            <label for="destiny">Qual o Pais de Destino?</label>
+            <select name="destiny" id="destiny">
+                <option value="par">Paris</option>
+                <option value="lon">Londres</option>
+                <option value="nw">Nova York</option>
+                <option value="to">Tóquio</option>
+            </select>
+        </div>
+
+        <div>
+            <span>Preferência de assento?</span>
+            <fieldset>
+                <div>
+                    <label for="janela">Janela</label>
+                    <input id="janela" type="checkbox">
+                </div>
+                <div>
+                    <label for="corredor">Corredor</label>
+                    <input id="corredor" type="checkbox">
+                </div>
+                <div>
+                    <label for="saidaEmerg">Próximo à saída de emergência</label>
+                    <input id="saidaEmerg" type="checkbox">
+                </div>
+
+            </fieldset>
+        </div>
+
+        <div>
+            <span>Informações do Cartão:</span>
+            <fieldset>
+
+                <div>
+                    <label for="cardNumber">Número do Cartão:</label>
+                    <input id="cardNumber" type="number" placeholder="8888 8888 8888 8888" required>
+                </div>
+                <div>
+                    <div>
+                        <label for="cvc">cvc:</label>
+                        <input type="text" id="cvc" name="cvc" pattern="\d{3}" placeholder="Ex: 123" required>
+                    </div>
+                    <div>
+                        <label for="dataExpiracao">Vencimento:</label>
+                        <input type="month" id="dataExpiracao" name="dataExpiracao" pattern="\d{2}/\d{2}" placeholder="mm/aa" required>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div>
+            <label for="passport">Uma foto do seu passaporte:</label>
+            <input type="file" id="passport" name="imagem" accept="image/*">
+        </div>
+
+        <div>
+            <legend>Preferências de Serviço</legend>
+            <fieldset>
+                <label>
+                  <input type="checkbox" name="servicoQuarto" value="servicoQuarto"> Serviço de Quarto
+                </label>
+              
+                <label>
+                  <input type="checkbox" name="trasladoAeroporto" value="trasladoAeroporto"> Traslado do Aeroporto
+                </label>
+              
+                <label>
+                  <input type="checkbox" name="passeiosTuristicos" value="passeiosTuristicos"> Passeios Turísticos Adicionais
+                </label>
+              </fieldset>
+              
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+    
+</body>
+</html>
