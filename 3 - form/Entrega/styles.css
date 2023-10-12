@@ -85,6 +85,9 @@ form{
     border: 1px solid var(--black-3);
     gap: 32px;
 }
+form h2{
+    text-transform: uppercase;
+}
 form main{
     display: flex;
     flex-direction: column;
