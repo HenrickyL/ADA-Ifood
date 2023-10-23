@@ -1,5 +1,6 @@
 window.addEventListener('load',()=>{
     const htmlProducts = document.getElementById('list-products')
+    const htmlOffers = document.getElementById('list-offers')
     
     fetch('data.json')
     .then(response => response.json())
@@ -11,16 +12,10 @@ window.addEventListener('load',()=>{
                         name: key, 
                         value: data.categories[key]
                     }})
-            const responseCategory = SetCategories(categories)
-
-            htmlProducts.innerHTML = responseCategory
-            const htmlOffers = document.getElementById('list-offers')
+            SetCategories(categories)
             const offers = data.offers
-            console.log(offers)
-            let resultOffers = `<div class="products">`
-            resultOffers += SetProducts(offers)
-            resultOffers+=`</div>`
-            htmlOffers.innerHTML = resultOffers
+            SetOffers(offers)
+            
     });
 
 
@@ -35,7 +30,7 @@ window.addEventListener('load',()=>{
                 responseCategory += SetProducts(category.value)
             responseCategory+=`</div></div>`
         })
-        return responseCategory
+        htmlProducts.innerHTML = responseCategory
     }
     
     function SetProducts(products){
@@ -68,6 +63,13 @@ window.addEventListener('load',()=>{
                 }
         })
         return responseProduct;
+    }
+
+    function SetOffers(offers){
+        let resultOffers = `<div class="products">`
+        resultOffers += SetProducts(offers)
+        resultOffers+=`</div>`
+        htmlOffers.innerHTML = resultOffers
     }
 })
 
