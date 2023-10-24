@@ -2,15 +2,15 @@
     --background: #F2E5A8ff;
     --background-snd: #F3D68Bff;
     --background-ter: #F6B756ff;
-    
+
     --black-1: #000000;
     --black-2: #2a2a2a;
     --black-3: #4a4a4a;
 
     --white-1: #FEFFFE;
     --white-2: #F0F0F0;
-    --white-3: #EFEFEF;  
-    
+    --white-3: #EFEFEF;
+
     --primary: #F598ADff; /* bakermiller-pink */
 
     /* Cores Secundárias */
@@ -39,22 +39,22 @@
     width: 8px;
     height: 8px;
   }
-  
+
   /* Track */
   ::-webkit-scrollbar-track {
-    background: transparent; 
-    
+    background: transparent;
+
   }
-   
+
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.25); 
+    background: rgba(0, 0, 0, 0.25);
       border-radius:4px;
   }
-  
+
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #333; 
+    background: #333;
   }
 
 
@@ -76,14 +76,14 @@ body{
     background-repeat: no-repeat; */
     width: 100vw;
     height: 100vh;
-    /* overflow: hidden; */
+    overflow-x: hidden;
 }
 header{
     width: 100%;
-    background-image: url("./assets/bg.png");
+    background-color: var(--secondary);
+    /* background-image: url("./assets/bg.png"); */
     background-position: center;
     background-size: cover;
-    background-color: var(--background);
     background-repeat: no-repeat;
 }
 nav{
@@ -98,15 +98,16 @@ nav ul{
     flex-direction: row;
     gap: 5px;
     justify-content: space-around;
-    
+
 }
 nav li a{
-    color: var(--secondary);
+    color: var(--white-3);
     font-size: 18px;
     font-weight: bold;
+    transition: 500ms;
 }
 li:hover a{
-    color: var(--secondary-light);
+    color: var(--background);
 }
 header div{
     display: flex;
@@ -123,25 +124,14 @@ body .content {
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    padding: 16px;
     width: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
+    /* overflow-y: auto;
+    overflow-x: hidden; */
 
-}
-
-.menu{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 aside{
-    width: 20rem;
-    position: absolute;
-    left: 1rem;
-    top: 8rem;
+ 
 }
 
 footer{
@@ -157,10 +147,24 @@ footer{
     display: flex;
     flex-direction: column;
     width: 70vw;
-    margin-left: 15rem;
+    border-radius: 12px;
 }
 
 #list-products{
+    max-height: 45vh;
+    overflow-x: auto;
+    margin-top: 8px;
+}
+
+#list-offers{
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+}
+
+#list-offers .category{
+    display: flex;
+    flex-direction: column;
 }
 
 .category{
@@ -171,12 +175,16 @@ footer{
     width: 100%;
     height: 100%;
 }
-.content h1{
+.category h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     justify-content: center;
     background-color: var(--background);
     border-radius: 8px;
-    padding: 0 4px;
+    padding: 4px 4px;
+    margin-bottom: 8px;
 }
 .products{
     display: flex;
@@ -185,7 +193,8 @@ footer{
     justify-content: start;
     gap: 8px;
     width: 100%;
-    padding: 12px;
+    padding: 8px;
+    max-width: 80vw;
     overflow-x: auto;
 }
 /* ------------------------ */
@@ -282,9 +291,112 @@ footer{
 .card-img:hover::before {
     transform: rotate(-135deg) scale(3) translateY(-20%);
   }
-  
+
 .card-cover{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* ------------------------ */
+section{
+    background-color: var(--secondary-light);
+    width: 100vw;
+}
+section h2{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--background-snd);
+    border-radius: 8px;
+    padding: 4px;
+}
+section article, section form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 8px;
+}
+section article{
+    background-color: var(--tertiary);
+}
+
+table{
+    background-color: var(--background);
+    padding: 8px;
+    border-radius: 8px;
+    border-collapse: collapse;
+}
+
+th, td{
+}
+th{
+    background-color: gray;
+}
+td, th{
+    padding:4px 8px;
+}
+
+form main{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-snd);
+    padding: 16px;
+    border-radius: 8px;
+    gap: 8px;
+}
+
+label, legend{
+    font-weight: bold;
+}
+.field{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 16px;
+    gap: 8px;
+}
+
+input, button, select{
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background-color: var(--background);
+    transition: 500ms;
+    font-size: large;
+    font-family: sans-serif;
+    width: 100%;
+}
+
+input:hover, select:hover{
+    border: 2px solid var(--white-3);
+}
+
+input:focus, select:focus{
+    border: 2px solid var(--primary);
+    background-color: white;
+    border-radius: 10px;
+}
+input:disabled, select:disabled, button:disabled{
+    background-color: var(--white-3);
+}
+
+button{
+    width: 16rem;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: var(--tertiary);
+}
+
+button:hover{
+    border: 2px solid var(--secondary);
+}
+
+button:active{
+    transition: 250ms;
+    border: 2px solid black;
+    background-color: var(--secondary);
 }

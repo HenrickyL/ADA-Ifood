@@ -24,7 +24,7 @@ window.addEventListener('load',()=>{
         categories.forEach((category)=>{
             responseCategory += `
                 <div class="category">
-                    <h1>${category.name}</h1>
+                    <h2>${category.name}</h2>
                     <div class="products">
                     `
                 responseCategory += SetProducts(category.value)
@@ -66,9 +66,11 @@ window.addEventListener('load',()=>{
     }
 
     function SetOffers(offers){
-        let resultOffers = `<div class="products">`
+        let resultOffers = `<div class="category">
+            <h2>Ofertas Especiais</h2>
+            <div  class="products">`
         resultOffers += SetProducts(offers)
-        resultOffers+=`</div>`
+        resultOffers+=`</div></div>`
         htmlOffers.innerHTML = resultOffers
     }
 })

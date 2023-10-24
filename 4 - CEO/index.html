@@ -27,14 +27,11 @@
         <img src="./assets/bg.jpg" alt="Café Encantado">
     </section> -->
     <div class="content">
+       
         <main class="menu">
-            <aside>
-                <h2>Cardápio Mágico</h2>
-                <p>Explore nosso cardápio encantado de bebidas mágicas e deliciosos bolos que vão inspirar sua criatividade.</p>
-            </aside>
             <div id="list-products" class="articleContainer">
                 <div class="category">
-                    <h1>Bebidas Mágicas</h1>
+                    <h2>Bebidas Mágicas</h2>
                     <div class="products">
                         <article class="product card-img">
                             <figure >
@@ -53,10 +50,10 @@
                     </div>
                 </div>  
             </div>
-            <div class="articleContainer">
-                <h1>Ofertas Especiais</h1>
+            <div id="list-offers">
                 <div class="category">
-                    <div id="list-offers" class="articleContainer">
+                    <h2>Ofertas Especiais</h2>
+                    <div  class="products">
                         <article class="product card-img">
                             <figure >
                                 <img class="card-cover" src="./assets/bg.jpg" alt="Café Mágico">
@@ -76,6 +73,10 @@
             </div>
             </div>
         </main>
+        <aside>
+            <h2>Cardápio Mágico</h2>
+            <p>Explore nosso cardápio encantado de bebidas mágicas e deliciosos bolos que vão inspirar sua criatividade.</p>
+        </aside>
         <section id="events">
             <article>
                 <h2 class="sectionTitle">Eventos Especiais</h2>
@@ -103,11 +104,17 @@
             <form action="#" method="post">
                 <h2 class="sectionTitle">Receba Inspirações Mágicas</h2>
                 <p>Assine nossa newsletter e receba atualizações, ideias inspiradoras e convites para nossos eventos especiais.</p>
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
-                <button type="submit">Assinar</button>
+                <main>
+                    <div class="field">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <button type="submit">Assinar</button>
+                </main>
             </form>
         </section>
     </div>
