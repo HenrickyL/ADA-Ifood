@@ -68,12 +68,11 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: start;
-
-    background-color: var(--background-ter);
-    /* background-image: url("./assets/background.jpg");
+    /* background-color: var(--background-ter); */
+    background-image: url("./assets/background.jpg");
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat; */
+    background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
@@ -131,7 +130,13 @@ body .content {
 }
 
 aside{
- 
+    position: absolute;
+    width: 15rem;
+    left: 2rem;
+    top: 8rem;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: var(--background);
 }
 
 footer{
@@ -139,7 +144,7 @@ footer{
     align-items: center;
     justify-content: center;
     width: 100%;
-    height:3rem;
+    height:5rem;
     background: var(--secondary);
 }
 /* ------------------------ */
