@@ -6,27 +6,52 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/logo.svg">
     <title>iFood</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#pagina-inicial">Página Inicial</a></li>
-                <li><a href="#cardapio">Cardápio</a></li>
-                <li><a href="#sobre-nos">Sobre Nós</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+        <img class="iconLogo" src="assets/logo.svg" alt="Logo ifood">
+        <div class="content">
+            <nav>
+                <ul>
+                    <li>
+                        <!-- <img src="assets/home.svg" alt="home icon"> -->
+                        <a href="#pagina-inicial">Home</a></li>
+                    <li>
+                        <!-- <img src="assets/menu.png" alt="menu icon"> -->
+                        <a href="#cardapio">Cardápio</a>
+                    </li>
+                    <li>
+                        <!-- <img src="assets/about.svg" alt="about icon"> -->
+                        <a href="#sobre-nos">Sobre Nós</a>
+                    </li>
+                    <li>
+                        <!-- <img src="assets/contact.png" alt="contact icon"> -->
+                        <a href="#contato">Contato</a>
+                    </li>
+                </ul>
+            </nav>
+            <div>
+                <button>Registrar</button>
+                <button>Logar</button>
+            </div>
+        </div>
     </header>
     
     <section id="pagina-inicial">
         <h1>Bem-vindo ao Novo iFood</h1>
         <p>Descubra uma nova maneira de pedir sua comida favorita online.</p>
+
+        <h2>Novidades</h2>
+        <ul>
+            <li>Agora é possível <b>ocultar</b> um restaurante.</li>
+            <li>Cupons para sua região - Receba cupons que são válidos para sua área.</li>
+        </ul>
     </section>
     
-    <section id="cardapio">
+    <main id="cardapio">
         <h2>Cardápio Digital</h2>
         <div class="card">
             <img src="prato1.jpg" alt="Prato 1">
@@ -39,7 +64,7 @@
             <p>Descrição do Prato 2.</p>
         </div>
         <!-- Adicione mais cards para outros pratos aqui -->
-    </section>
+    </main>
     
     <section id="sobre-nos">
         <h2>Sobre Nós</h2>
@@ -48,14 +73,16 @@
     
     <section id="contato">
         <h2>Entre em Contato</h2>
-        <form class="field">
-            <div class="field">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-            </div>
-            <div class="field">
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+        <form>
+            <div class="field-group">
+                <div class="field">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="field">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
             </div>
             <div class="field">
                 <label for="mensagem">Mensagem:</label>
@@ -65,8 +92,15 @@
         </form>
     </section>
     
-    <footer>
+    <footer >
         <p>Entre em contato conosco: contato@ifood.com</p>
+        <div class="rights">
+            <img src="assets/logo.svg" alt="Logo ifood">
+            <div class="field">
+                <span>&copy;Copyright 2021 - iFood - Todos os direitos reservados iFood com Agência de Restaurantes Online S.A.</span>
+                <span>CNPJ 14.380.200/0001-21 / Avenida dos Autonomistas, nº 1496, Vila Yara, Osasco/SP - CEP 06.020-902</span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

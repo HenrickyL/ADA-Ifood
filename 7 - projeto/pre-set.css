@@ -10,10 +10,11 @@
     --white-3: #EFEFEF;
     --white-4: #CFCFCF;
 
-
     --primary: #D9232A;
     --secondary: #E0270D;
     --secondary-light: #FF2A00;
+    --tertiary: #ffb761;
+    --tertiary-light: #FED298;
 }
 
 *{
@@ -58,4 +59,9 @@ color: var(--black-1);
 
 label{
     font-weight: bold;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
 }

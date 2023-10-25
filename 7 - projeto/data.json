@@ -1,0 +1,36 @@
+{
+    "products":[
+        {
+            "img": "",
+            "name": "",
+            "description": "",
+            "serves": null,
+            "price": 3.75,
+            "discount": 0
+        }
+    ],
+    "stores": [
+        {
+            "img": "",
+            "stars": 3.5,
+            "category": "Sorvetes",
+            "distance":{
+                "value": 1,
+                "scale": "km"
+            },
+            "PreparationTime":{
+                "min": 76,
+                "max": 86
+            },
+            "deliveryPrice": 0,
+            "couponId": 1,
+            "minimumOrder": 10
+        }
+    ],
+    "coupons":[
+        {
+            "id": 1,
+            "value": 5
+        }
+    ]
+}
