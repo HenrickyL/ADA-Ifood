@@ -8,19 +8,21 @@ body{
     width: 100vw;
     height: 100vh;
     background-color: var(--background);
+    overflow-x: hidden;
 }
 
 .content {
     display: flex;
     align-items: center;
 }
+
 @media screen and (max-width: 768px) {
     header{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        gap: 3rem;
+        gap: 1rem;
         padding: 1rem;
         width: 100%;
     }
@@ -132,3 +134,63 @@ nav .active{
 
 /* -------------------------------------------------------- */
 
+
+
+@media screen and (max-width: 768px) {
+    footer{
+        max-width: 20rem;
+    }
+}
+/* -------------------------------------------------------- */
+
+
+
+#social-media{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+}
+
+#social-media .socialIcon{
+    fill: var(--black-3);
+    transition: 400ms;
+    width: 2rem;
+    height: 2rem;
+
+}
+
+#social-media .socialIcon:hover{
+    fill: var(--black-2);
+}
+
+
+.bodyContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    max-width: 80vh;
+    overflow-y: auto;
+    gap: 4px;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+}
+
+#sobre-nos{
+    padding: 1rem;
+    width: 100%;
+}
+
+
+#cardapio{
+}
