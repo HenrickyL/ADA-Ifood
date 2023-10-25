@@ -30,23 +30,29 @@
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
-  }
+}
 
   /* Track */
-  ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: transparent;
-
-  }
+}
 
   /* Handle */
-  ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.25);
       border-radius:4px;
-  }
+}
 
   /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background: #333;
-  }
+}
 
 
+a, span, h1, h2, h3, label, p {
+font-family: 'Open Sans', sans-serif;
+color: var(--black-1);
+}
+label{
+    font-weight: bold;
+}
