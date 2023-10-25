@@ -8,6 +8,8 @@
     --white-1: #FFFFFF;
     --white-2: #F0F0F0;
     --white-3: #EFEFEF;
+    --white-4: #CFCFCF;
+
 
     --primary: #D9232A;
     --secondary: #E0270D;
@@ -53,6 +55,7 @@ a, span, h1, h2, h3, label, p {
 font-family: 'Open Sans', sans-serif;
 color: var(--black-1);
 }
+
 label{
     font-weight: bold;
 }
