@@ -107,6 +107,7 @@ header nav ul{
 
 header .iconLogo{
     width: 6rem;
+    cursor: pointer;
 }
 
 footer{
@@ -164,6 +165,7 @@ nav .active{
     transition: 400ms;
     width: 2rem;
     height: 2rem;
+    cursor: pointer;
 
 }
 
@@ -206,6 +208,7 @@ section{
 }
 
 #cardapio{
+    background-color: yellow;
 }
 
 
