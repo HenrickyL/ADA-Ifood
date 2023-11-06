@@ -4,7 +4,9 @@ function CalculateStarRating(rating:number[]) : number{
     for(let i=0; i < rating.length; i++){
         accumulator += (i+1)* rating[i]
     }
-    return accumulator/100
+    const total = rating.reduce((acc, value)=>acc+value,0)
+
+    return accumulator/total
 }
 
 //vou usar index do vetor para representar as estrelas
