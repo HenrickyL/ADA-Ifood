@@ -1,0 +1,1 @@
+ [Descrição atividade](https://github.com/Mateus-Paixao-Aulas/logica-programacao-js-1094/blob/master/aula-04/desafio/recibo-de-venda.md)
