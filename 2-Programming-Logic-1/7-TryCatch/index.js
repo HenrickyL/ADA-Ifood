@@ -11,7 +11,7 @@ function IMC(height, weight){
 
 
 
-function IMCResult( imcValue){
+function IMCResult( imcValue){  
     if(imcValue < 18.5){
         console.log("Abaixo do peso")
     }else if( 18.5 <= imcValue && imcValue < 24.9){
@@ -34,8 +34,6 @@ window.addEventListener("load", (event)=>{
         if(isNaN(weight)){
             throw new Error("Altura não é um erro")
         }
-    
-    
         IMCResult(IMC(height, weight))
     } catch (error) {
         alert("Erro: "+error.message)
