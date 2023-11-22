@@ -8,19 +8,19 @@ Desenvolver, utilizando os conceitos abordados ao longo do módulo, uma aplicaç
 
 Dentre as funcionalidades, espera-se que seja possível:
 
-- Adicionar uma tarefa (id, titulo e descrição)
-- Editar uma tarefa salva (titulo e descrição)
-- Remover uma tarefa salva
-- Listar todas as tarefas salvas
-- Obter uma tarefa, através de um parâmetro (id)
+- [x] Adicionar uma tarefa (id, titulo e descrição)
+- [ ] Editar uma tarefa salva (titulo e descrição)
+- [ ] Remover uma tarefa salva
+- [ ] Listar todas as tarefas salvas
+- [ ] Obter uma tarefa, através de um parâmetro (id)
  ---
 ## Validações
 
-- A tarefa não pode ter titulo e descrição vazios.
-- O título não deve conter apenas números
-- O titulo deve ter no mínimo 4 caracteres.
-- A descrição deve ter no mínimo 20 caracteres.
-- Não deve haver tarefas com o título duplicado.
+- [x] A tarefa não pode ter titulo e descrição vazios.
+- [x] O título não deve conter apenas números
+- [x] O titulo deve ter no mínimo 4 caracteres.
+- [x] A descrição deve ter no mínimo 20 caracteres.
+- [x] Não deve haver tarefas com o título duplicado.
 
 ## Observações
     
