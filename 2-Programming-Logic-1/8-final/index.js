@@ -1,6 +1,13 @@
 import {Start} from "./frontend.js"
 
-const tasks = []
+const tasks = [
+    {
+        id: 1,
+        title: "EEEEE",
+        description: " asdas asdasd  dasdas dasdasd",
+        createdAt: new Date()
+    }
+]
 window.addEventListener('load', ()=>{
     try {
         //start front, chamar handleTasks e validar os dados
@@ -25,13 +32,13 @@ const handleTasks = {
 
     },
     remove: ()=>{
-
+        
     },
     getAll: ()=>{
-
+        return tasks
     },
-    getById: ()=>{
-
+    getById: (id)=>{
+        return tasks.find(x=>x.id == id)
     }
 }
 

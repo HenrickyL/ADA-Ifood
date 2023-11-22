@@ -3,8 +3,18 @@ import {calculateLargestUnitOfTime, formatDate} from "./middleware.js"
 const taskNameInput = document.getElementById('task-name');
 const taskDescTextarea = document.getElementById('task-desc');
 const addButton = document.getElementById('bt-add');
+const modalContent = document.getElementById('content');
+const modal = document.getElementById('modal');
+
 
 let isClickable = true;
+let isEditable = false
+let showModal = false
+
+const editImg = document.querySelector('.edit')
+const deleteImg = document.querySelector('.delete')
+const closeImg = document.querySelector('.close')
+
 
 window.setInterval(()=>{
     isClickable = true;
@@ -16,7 +26,7 @@ function clearInputs(){
 }
 
 function Start(tasks, handleTasks, handleValidate){
-    Draw(tasks)
+    Draw(tasks, handleTasks, handleValidate)
     addButton.addEventListener('click', ()=>{
         if(isClickable){
             isClickable = false;
@@ -37,7 +47,7 @@ function Start(tasks, handleTasks, handleValidate){
             }
             handleValidate.ValidateDuplicatedTask(newTask, tasks)
             handleTasks.add(newTask)
-            Draw(tasks)
+            Draw(tasks, handleTasks, handleValidate)
         } catch (error) {
             alert("Erro: "+error.message)
             Start(tasks)
@@ -45,20 +55,20 @@ function Start(tasks, handleTasks, handleValidate){
     })
 }
 
-function Draw(tasks){
+function Draw(tasks, handleTasks, handleValidate){
     //tasks: task[]
     clearInputs()
     const tasksDiv = document.getElementById('tasks')
     if(tasks){
         tasks.forEach((task) => {
-            const card = DrawCard(task);
+            const card = DrawCard(task, handleTasks, handleValidate);
             tasksDiv.appendChild(card); // Adiciona cada card à div de tasks
         });
     }
 }
 
 
-const DrawCard = (task)=>{
+const DrawCard = (task, ValidateTask, handleValidate)=>{
     const cardHtml = `
     <div id="${task.id}" class="card">
         <h3>${task.title}</h3>
@@ -69,8 +79,15 @@ const DrawCard = (task)=>{
     const cardElement = document.createElement('div');
     cardElement.innerHTML = cardHtml;
     
-    cardElement.addEventListener('click',()=>{
-        console.log('click')
+    cardElement.addEventListener('click',(event)=>{
+        modalContent.innerHTML = ''
+        const taskId = event.currentTarget.querySelector('.card').id
+        const task = ValidateTask.getById(taskId)
+        const newCard = GetCardModal(task)
+        modalContent.appendChild(newCard)
+
+        showModal = true
+        modal.className = ''
     })
     return cardElement
 }
@@ -78,13 +95,23 @@ const DrawCard = (task)=>{
 const GetCardModal = (task)=>{
     const cardHtml = `
     <div id="${task.id}" class="card">
-        <h3>${task.title}</h3>
-        <p>${task.description}</p>
+        <h3>Tarefa</h3>
+        <input type="text" value="${task.title}" ${!isEditable && 'disabled'}>
+        <textarea ${!isEditable && 'disabled'} cols="30" rows="10">${task.description}</textarea>
         <span>${calculateLargestUnitOfTime(task.createdAt)}</span>
     </div>
     `
+    const cardElement = document.createElement('div');
+    cardElement.innerHTML = cardHtml;
+
+    return cardElement
 }
 
 
+
+closeImg.addEventListener('click', (event)=>{
+    showModal = false;
+    modal.className = 'hidden'
+})
 
 export {Start}
