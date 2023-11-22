@@ -33,7 +33,7 @@ function Start(tasks, handleTasks, handleValidate){
             }
             handleValidate.ValidateDuplicatedTask(newTask, tasks)
             handleTasks.add(newTask)
-            Draw(tasks)
+            Draw(tasks, newTask)
         } catch (error) {
             alert("Erro: "+error.message)
             Start(tasks)
@@ -41,11 +41,19 @@ function Start(tasks, handleTasks, handleValidate){
     })
 }
 
-function Draw(tasks){
+function Draw(tasks, newTask = null){
     //tasks: task[]
     const tasksDiv = document.getElementById('tasks')
     if(tasks){
-        tasksDiv.innerHTML =  tasks.map((task)=>DrawCard(task)).join('')
+        if(newTask != null){
+            const current = tasks.find(x=> x.id == newTask.id)
+            const others = tasks.filter(x=> x.id != newTask.id)
+            tasksDiv.innerHTML =  others.map((task)=>DrawCard(task)).join('')
+            const cardHtml = DrawCard(current)
+            tasksDiv.innerHTML += cardHtml
+        }else{
+            tasksDiv.innerHTML =  tasks.map((task)=>DrawCard(task)).join('')
+        }
     }
 }
 

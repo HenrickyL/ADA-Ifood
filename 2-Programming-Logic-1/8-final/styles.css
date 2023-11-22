@@ -57,10 +57,11 @@
 }
 .card p{
     font-size: 14px;
-    overflow: hidden;
+    overflow-x: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3; /* Define o número de linhas exibidas */
     -webkit-box-orient: vertical; /* Orientação vertical */
+    max-width: 100%; 
 }
 
 #remove{
