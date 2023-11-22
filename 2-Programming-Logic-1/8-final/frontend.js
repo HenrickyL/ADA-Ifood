@@ -10,7 +10,10 @@ window.setInterval(()=>{
     isClickable = true;
 }, 600)
 
-
+function clearInputs(){
+    taskNameInput.value = ''
+    taskDescTextarea.value = ''
+}
 
 function Start(tasks, handleTasks, handleValidate){
     Draw(tasks)
@@ -24,6 +27,7 @@ function Start(tasks, handleTasks, handleValidate){
             const id =  tasks.reduce((maxId, task) => Math.max(maxId, task.id), 0) + 1;
             const title = taskNameInput.value.trim()
             const description = taskDescTextarea.value.trim()
+            
             handleValidate.ValidateTask(title, description)
             const newTask = {
                 id,
@@ -43,6 +47,7 @@ function Start(tasks, handleTasks, handleValidate){
 
 function Draw(tasks, newTask = null){
     //tasks: task[]
+    clearInputs()
     const tasksDiv = document.getElementById('tasks')
     if(tasks){
         if(newTask != null){
