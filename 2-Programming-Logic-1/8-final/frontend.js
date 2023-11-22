@@ -35,7 +35,7 @@ function Start(tasks, _handleTasks, _handleValidate){
     if(_handleValidate)
         handleValidate = _handleValidate
 
-    Draw(tasks)
+    Draw()
     addButton.addEventListener('click', ()=>{
         if(!isValidClick()) return
         try {
@@ -52,7 +52,7 @@ function Start(tasks, _handleTasks, _handleValidate){
             }
             handleValidate.ValidateDuplicatedTask(newTask, tasks)
             handleTasks.add(newTask)
-            Draw(tasks)
+            Draw()
         } catch (error) {
             alert("Erro: "+error.message)
             Start(tasks)
@@ -60,7 +60,8 @@ function Start(tasks, _handleTasks, _handleValidate){
     })
 }
 
-function Draw(tasks){
+function Draw(){
+    const tasks = handleTasks.getAll()
     //tasks: task[]
     clearInputs()
     const tasksDiv = document.getElementById('tasks')
@@ -119,7 +120,7 @@ const GetCardModal = (task)=>{
 closeImg.addEventListener('click', ()=>{
     showModal = false;
     modal.className = 'hidden'
-    Draw(handleTasks.getAll())
+    Draw()
 })
 
 editImg.addEventListener('click', ()=>{
@@ -141,6 +142,16 @@ editImg.addEventListener('click', ()=>{
         const element = GetCardModal(currentTask)
         modalContent.appendChild(element)
     }
+})
+
+deleteImg.addEventListener('click', ()=>{
+    if(!isValidClick()) return
+    if(currentTask){
+        handleTasks.delete(currentTask.id)
+    }
+    showModal = false;
+    modal.className = 'hidden'
+    Draw()
 })
 
 

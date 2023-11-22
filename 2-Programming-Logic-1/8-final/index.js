@@ -1,6 +1,6 @@
 import {Start} from "./frontend.js"
 
-const tasks = [
+let tasks = [
     {
         id: 1,
         title: "EEEEE",
@@ -37,8 +37,8 @@ const handleTasks = {
             }
         }
     },
-    remove: ()=>{
-
+    delete: (id)=>{
+        tasks = tasks.filter(x=>x.id != id)
     },
     getAll: ()=>{
         return tasks
