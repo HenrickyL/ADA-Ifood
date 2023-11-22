@@ -28,11 +28,17 @@ const handleTasks = {
     add : (newTask)=>{
         tasks.push(newTask)
     },
-    edit: ()=>{
-
+    edit: (id, task)=>{
+        for(let t of tasks){
+            if(t.id == id){
+                t.title = task.title
+                t.description = task.description
+                break;
+            }
+        }
     },
     remove: ()=>{
-        
+
     },
     getAll: ()=>{
         return tasks

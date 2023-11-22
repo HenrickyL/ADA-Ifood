@@ -10,6 +10,7 @@ const modal = document.getElementById('modal');
 let isClickable = true;
 let isEditable = false
 let showModal = false
+let currentTask = null
 
 const editImg = document.querySelector('.edit')
 const deleteImg = document.querySelector('.delete')
@@ -25,14 +26,18 @@ function clearInputs(){
     taskDescTextarea.value = ''
 }
 
-function Start(tasks, handleTasks, handleValidate){
-    Draw(tasks, handleTasks, handleValidate)
+let handleTasks
+let handleValidate
+
+function Start(tasks, _handleTasks, _handleValidate){
+    if(_handleTasks)
+        handleTasks = _handleTasks
+    if(_handleValidate)
+        handleValidate = _handleValidate
+
+    Draw(tasks)
     addButton.addEventListener('click', ()=>{
-        if(isClickable){
-            isClickable = false;
-        }else{
-            return
-        }
+        if(!isValidClick()) return
         try {
             const id =  tasks.reduce((maxId, task) => Math.max(maxId, task.id), 0) + 1;
             const title = taskNameInput.value.trim()
@@ -47,7 +52,7 @@ function Start(tasks, handleTasks, handleValidate){
             }
             handleValidate.ValidateDuplicatedTask(newTask, tasks)
             handleTasks.add(newTask)
-            Draw(tasks, handleTasks, handleValidate)
+            Draw(tasks)
         } catch (error) {
             alert("Erro: "+error.message)
             Start(tasks)
@@ -55,20 +60,21 @@ function Start(tasks, handleTasks, handleValidate){
     })
 }
 
-function Draw(tasks, handleTasks, handleValidate){
+function Draw(tasks){
     //tasks: task[]
     clearInputs()
     const tasksDiv = document.getElementById('tasks')
     if(tasks){
+        tasksDiv.innerHTML = ''
         tasks.forEach((task) => {
-            const card = DrawCard(task, handleTasks, handleValidate);
+            const card = DrawCard(task);
             tasksDiv.appendChild(card); // Adiciona cada card à div de tasks
         });
     }
 }
 
 
-const DrawCard = (task, ValidateTask, handleValidate)=>{
+const DrawCard = (task)=>{
     const cardHtml = `
     <div id="${task.id}" class="card">
         <h3>${task.title}</h3>
@@ -82,8 +88,9 @@ const DrawCard = (task, ValidateTask, handleValidate)=>{
     cardElement.addEventListener('click',(event)=>{
         modalContent.innerHTML = ''
         const taskId = event.currentTarget.querySelector('.card').id
-        const task = ValidateTask.getById(taskId)
-        const newCard = GetCardModal(task)
+        const task = handleTasks.getById(taskId)
+        currentTask = task
+        const newCard = GetCardModal(currentTask)
         modalContent.appendChild(newCard)
 
         showModal = true
@@ -96,8 +103,8 @@ const GetCardModal = (task)=>{
     const cardHtml = `
     <div id="${task.id}" class="card">
         <h3>Tarefa</h3>
-        <input type="text" value="${task.title}" ${!isEditable && 'disabled'}>
-        <textarea ${!isEditable && 'disabled'} cols="30" rows="10">${task.description}</textarea>
+        <input id="modal-card-input" type="text" value="${task.title}" ${!isEditable ? 'disabled': ''}>
+        <textarea id="modal-card-textarea" ${!isEditable ? 'disabled': ''} cols="30" rows="10">${task.description}</textarea>
         <span>${calculateLargestUnitOfTime(task.createdAt)}</span>
     </div>
     `
@@ -109,9 +116,46 @@ const GetCardModal = (task)=>{
 
 
 
-closeImg.addEventListener('click', (event)=>{
+closeImg.addEventListener('click', ()=>{
     showModal = false;
     modal.className = 'hidden'
+    Draw(handleTasks.getAll())
 })
 
+editImg.addEventListener('click', ()=>{
+    if(!isValidClick()) return
+    if(isEditable ){
+        const title = document.getElementById('modal-card-input').value.trim()
+        const description = document.getElementById('modal-card-textarea').value.trim()
+        const newTask = {
+            id: currentTask.id,
+            title,
+            description
+        }
+        if(!isEqual(handleTasks.getById(currentTask.id), newTask))
+            handleTasks.edit(currentTask.id, newTask)    
+    }
+    isEditable = !isEditable;
+    if(currentTask){
+        modalContent.innerHTML=''
+        const element = GetCardModal(currentTask)
+        modalContent.appendChild(element)
+    }
+})
+
+
+
+function isEqual(task1, task2){
+    return  task1.id === task2.id && 
+            task1.title === task2.title &&
+            task1.description === task2.description
+}
+
+function isValidClick(){
+    if(isClickable){
+        isClickable = false;
+        return true;
+    }
+    return false
+}
 export {Start}
