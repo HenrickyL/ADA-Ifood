@@ -9,10 +9,10 @@ Desenvolver, utilizando os conceitos abordados ao longo do módulo, uma aplicaç
 Dentre as funcionalidades, espera-se que seja possível:
 
 - [x] Adicionar uma tarefa (id, titulo e descrição)
-- [ ] Editar uma tarefa salva (titulo e descrição)
-- [ ] Remover uma tarefa salva
-- [ ] Listar todas as tarefas salvas
-- [ ] Obter uma tarefa, através de um parâmetro (id)
+- [x] Editar uma tarefa salva (titulo e descrição)
+- [x] Remover uma tarefa salva
+- [x] Listar todas as tarefas salvas
+- [x] Obter uma tarefa, através de um parâmetro (id)
  ---
 ## Validações
 
