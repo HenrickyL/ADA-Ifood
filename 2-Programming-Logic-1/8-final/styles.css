@@ -1,0 +1,83 @@
+@import url(inputs.css);
+
+
+#container {
+    padding: 1rem;
+    background-color: var(--tertiary);
+    border-radius: 8px;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#tasks{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
+    width: 100%;
+    height: 10rem;
+    padding: 0.5rem;
+    max-width: 50vw;
+    gap: 10px;
+}
+
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 8rem;
+    width: 12rem;
+    padding: 1rem 0.5rem;
+    border-radius: 8px;
+    background-color: var(--secondary-light);
+    border: 2px solid transparent;
+    transition: 0.5s;
+    gap: 5px;
+}
+
+.card:hover{
+    border: 2px solid var(--primary);
+}
+
+
+
+.card span{
+    position: absolute;
+    left: 5px;
+    bottom: 2px;
+    color: var(--black-3);
+    font-size: 12px;
+}
+.card p{
+    font-size: 14px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Define o número de linhas exibidas */
+    -webkit-box-orient: vertical; /* Orientação vertical */
+}
+
+#remove{
+    background-color: var(--alert);
+}
+
+#remove + span{
+    color: var(--black-3);
+    font-size: 12px;
+}
+
+
+.select{
+    border: 2px solid var(--alert);
+    background-color: var(--secondary);
+}
+
+.select:hover{
+    border: 2px solid var(--alert);
+}

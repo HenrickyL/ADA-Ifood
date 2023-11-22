@@ -1,0 +1,113 @@
+@import url(pre-set.css);
+.field-group, .field-group-half{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .field-group, .field-group-half{
+        flex-direction: column;
+    }   
+}
+
+
+.field-group-half .field, .field-group-half .field-group {
+    flex: 3;
+}
+.field-group-half .field:last-child, .field-group-half .field-group:last-child{
+    flex: 1;
+}
+.field{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 16px;
+    gap: 8px;
+}
+
+/* -------------------------------------------------------- */
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 3rem;
+    background-color: white;
+    border-radius: 8px;
+    border: 1.5px solid var(--white-3);
+    gap: 8px;
+    max-width: 25rem;
+}
+/* -------------------------------------------------------- */
+
+textarea {
+    resize: none;
+}
+
+input, button, select, textarea{
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1.5px solid var(--white-2);
+    background-color: var(--background);
+    transition: 400ms;
+    font-size: large;
+    font-family: sans-serif;
+    width: 100%;
+}
+
+input:hover, select:hover, textarea:hover, button:hover{
+    border: 1.5px solid var(--white-4);
+}
+
+input:focus, select:focus, textarea:focus{
+    border: 1.5px solid var(--primary);
+    background-color: white;
+    border-radius: 10px;
+}
+input:disabled, select:disabled, button:disabled, textarea:disabled{
+    background-color: var(--white-3);
+    border: 1.5px solid var(--black-4);
+}
+
+button{
+    width: 16rem;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: var(--secondary);
+    border: 1.5px solid transparent;
+    color: var(--white-1);
+}
+
+button:active{
+    transition: 250ms;
+    border: 1.5px solid black;
+    background-color: var(--secondary-light);
+}
+
+
+
+header button{
+    background-color: var(--background);
+    color: black;
+    width: 6rem;
+}
+
+header button:hover{
+    background-color: var(--white-3);
+
+}
+
+header button:last-child{
+    background-color: var(--primary);
+}
+
+header button:last-child:hover{
+    background-color: var(--secondary-light);
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <form id="myform" action="">
+            <h2>TODO-LIST</h2>
+            <div class="field">
+                <input id="task-name" type="text" placeholder="Nome da Tarefa" >
+                <textarea name="task-desc" id="task-desc"  placeholder="Descrição"></textarea>
+                <button id="bt-add">Adicionar</button>
+            </div>
+        </form>
+        <div id="tasks">
+            
+        </div>
+        <div class="field">
+            <button id="remove">Remover</button>
+            <span>*Remover tasks selecionadas</span>
+        </div>
+
+    </div>
+</body>
+<script>
+    const taskForm = document.getElementById('myform');
+    taskForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+    })
+</script>
+<script src="index.js" type="module"></script>
+</html>
