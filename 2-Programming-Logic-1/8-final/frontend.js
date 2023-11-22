@@ -4,6 +4,12 @@ const taskNameInput = document.getElementById('task-name');
 const taskDescTextarea = document.getElementById('task-desc');
 const addButton = document.getElementById('bt-add');
 
+let isClickable = true;
+
+window.setInterval(()=>{
+    isClickable = true;
+}, 600)
+
 function ValidateTask(title, description){
     if(!title)
         throw new Error("Titulo não pode ser null.")
@@ -27,6 +33,11 @@ function ValidateDuplicatedTask(newTask, tasks){
 function Start(tasks){
     Draw(tasks)
     addButton.addEventListener('click', ()=>{
+        if(isClickable){
+            isClickable = false;
+        }else{
+            return
+        }
         try {
             const id =  tasks.reduce((maxId, task) => Math.max(maxId, task.id), 0) + 1;
             const title = taskNameInput.value.trim()

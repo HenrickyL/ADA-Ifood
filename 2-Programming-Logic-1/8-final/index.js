@@ -1,13 +1,6 @@
 import {Start} from "./frontend.js"
 
-const tasks = [
-    {
-        id: 1,
-        title: "Task 1",
-        description: "my description - abc def ghi jkl mno",
-        createdAt: new Date(1996, 11, 16)
-    }
-]
+const tasks = []
 window.addEventListener('load', ()=>{
     try {
         Start(tasks)
