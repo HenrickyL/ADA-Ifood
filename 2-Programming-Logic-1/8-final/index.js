@@ -1,12 +1,6 @@
 import {Start} from "./frontend.js"
 
 let tasks = [
-    {
-        id: 1,
-        title: "EEEEE",
-        description: " asdas asdasd  dasdas dasdasd",
-        createdAt: new Date()
-    }
 ]
 window.addEventListener('load', ()=>{
     try {
