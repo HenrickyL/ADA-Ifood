@@ -37,7 +37,7 @@ function Start(tasks, handleTasks, handleValidate){
             }
             handleValidate.ValidateDuplicatedTask(newTask, tasks)
             handleTasks.add(newTask)
-            Draw(tasks, newTask)
+            Draw(tasks)
         } catch (error) {
             alert("Erro: "+error.message)
             Start(tasks)
@@ -45,31 +45,35 @@ function Start(tasks, handleTasks, handleValidate){
     })
 }
 
-function Draw(tasks, newTask = null){
+function Draw(tasks){
     //tasks: task[]
     clearInputs()
     const tasksDiv = document.getElementById('tasks')
     if(tasks){
-        if(newTask != null){
-            const current = tasks.find(x=> x.id == newTask.id)
-            const others = tasks.filter(x=> x.id != newTask.id)
-            tasksDiv.innerHTML =  others.map((task)=>DrawCard(task)).join('')
-            const cardHtml = DrawCard(current)
-            tasksDiv.innerHTML += cardHtml
-        }else{
-            tasksDiv.innerHTML =  tasks.map((task)=>DrawCard(task)).join('')
-        }
+        tasks.forEach((task) => {
+            const card = DrawCard(task);
+            tasksDiv.appendChild(card); // Adiciona cada card à div de tasks
+        });
     }
 }
 
 
-const DrawCard = (task)=>`
-<div id="${task.id}" class="card">
-    <h3>${task.title}</h3>
-    <p>${task.description}</p>
-    <span>${calculateLargestUnitOfTime(task.createdAt)}</span>
-</div>
-`
+const DrawCard = (task)=>{
+    const cardHtml = `
+    <div id="${task.id}" class="card">
+        <h3>${task.title}</h3>
+        <p>${task.description}</p>
+        <span>${calculateLargestUnitOfTime(task.createdAt)}</span>
+    </div>
+    `
+    const cardElement = document.createElement('div');
+    cardElement.innerHTML = cardHtml;
+    
+    cardElement.addEventListener('click',()=>{
+        console.log('click')
+    })
+    return cardElement
+}
 
 
 
