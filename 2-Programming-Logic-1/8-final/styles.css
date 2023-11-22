@@ -54,6 +54,7 @@
     bottom: 2px;
     color: var(--black-3);
     font-size: 12px;
+    width: max-content;
 }
 .card p{
     font-size: 14px;
@@ -64,14 +65,82 @@
     max-width: 100%; 
 }
 
-#remove{
-    background-color: var(--alert);
+
+#modal{
+    top: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000a;
+    transition: 0.5s;
+}
+#modal .content{
+    position: relative;
+}
+#modal.hidden{
+    display: none;
 }
 
-#remove + span{
-    color: var(--black-3);
-    font-size: 12px;
+#modal .close{
+    position: relative;
+    z-index: 2;
+    left: calc(100% - 1.5rem);
+    top: 2rem;
+    width: 1.3rem;
 }
+
+#modal .edit{
+    position: relative;
+    z-index: 2;
+    left: -1rem;
+    top: 3rem;
+}
+
+#modal .delete{
+    position: relative;
+    z-index: 2;
+    top: calc(100%  - 2.1rem);
+    left: calc(100% - 6.1rem);
+}
+
+
+#modal img{
+    transition: 0.5s;
+    width: 2rem;
+}
+
+#modal img:hover{
+    transform: scale(1.1);
+}
+#modal img:active{
+    transform: scale(0.9);
+    transition: 0.1s;
+}
+#modal input:disabled{
+    font-weight: bold;
+    color: var(--black-1);
+}
+#modal .card{
+    width: 45vw;
+    height: 40vh;
+    background-color: var(--white-2);
+    gap: 1rem;
+    min-width: 20rem;
+}
+#modal .card:hover{
+    border: 2px solid transparent;
+}
+#modal .card span{
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 14px;
+    font-weight: bold;
+}
+
 
 
 .select{

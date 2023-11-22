@@ -19,12 +19,27 @@
         <div id="tasks">
             
         </div>
-        <div class="field">
-            <button id="remove">Remover</button>
-            <span>*Remover tasks selecionadas</span>
-        </div>
-
     </div>
+
+
+    <div id="modal" class="">
+        <div class="content">
+            <img class="close" src="assets/close.svg" alt="close modal">
+            <img class="edit" src="assets/edit.svg" alt="edit modal">
+            <img class="delete" src="assets/delete.svg" alt="delete modal">
+
+            <div id="1" class="card">
+                <h3>Tarefa</h3>
+                <input type="text" value="NAME" disabled>
+                <textarea disabled name="" contenteditable="aaa" id="" cols="30" rows="10">
+                    aaa
+                </textarea>
+                <span>21/11/2023</span>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 <script>
     const taskForm = document.getElementById('myform');

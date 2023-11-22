@@ -75,6 +75,16 @@ const DrawCard = (task)=>{
     return cardElement
 }
 
+const GetCardModal = (task)=>{
+    const cardHtml = `
+    <div id="${task.id}" class="card">
+        <h3>${task.title}</h3>
+        <p>${task.description}</p>
+        <span>${calculateLargestUnitOfTime(task.createdAt)}</span>
+    </div>
+    `
+}
+
 
 
 export {Start}
