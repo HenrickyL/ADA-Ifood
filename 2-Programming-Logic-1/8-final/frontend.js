@@ -30,7 +30,7 @@ function ValidateDuplicatedTask(newTask, tasks){
 
 }
 
-function Start(tasks){
+function Start(tasks, handleTasks){
     Draw(tasks)
     addButton.addEventListener('click', ()=>{
         if(isClickable){
@@ -50,7 +50,7 @@ function Start(tasks){
                 createdAt: new Date()
             }
             ValidateDuplicatedTask(newTask, tasks)
-            tasks.push(newTask)
+            handleTasks.add(newTask)
             Draw(tasks)
         } catch (error) {
             alert("Erro: "+error.message)
