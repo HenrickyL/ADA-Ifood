@@ -1,7 +1,7 @@
 import {Start} from "./frontend.js"
 
-let tasks = [
-]
+let tasks = []
+
 window.addEventListener('load', ()=>{
     try {
         //start front, chamar handleTasks e validar os dados
