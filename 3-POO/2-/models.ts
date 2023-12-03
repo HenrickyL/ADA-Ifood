@@ -11,7 +11,7 @@ class Autor{
     }
 
     public exibirDetalhes(): void{
-        console.log(`autor: ${this._autor}\nnacionalidade: ${this._nacionalidade}`)
+        console.log(`--------AUTOR----------\nautor: ${this._autor}\nnacionalidade: ${this._nacionalidade}`)
     }
 }
 
@@ -33,7 +33,7 @@ class Livro{
     }
 
     public detalhesDoLivro():void{
-        console.log(`Titulo: ${this.autor}\nAnoPublicacao: ${this.anoPublicacao}\nAutor: ${this.autor.name}`)
+        console.log(`--------LIVRO----------\nTitulo: ${this.titulo}\nAnoPublicacao: ${this.anoPublicacao}\nAutor: ${this.autor.name}`)
     }
 
 }
@@ -53,8 +53,8 @@ class Biblioteca{
         return this._livros
     }
 
-    public get(autor:string): Livro | null{
-        const current = this.livros.find(x=>x.autor.name.toLowerCase() === autor.toLowerCase())
+    public get(autor:string): Livro[] | null{
+        const current = this.livros.filter(x=>x.autor.name.toLowerCase().includes(autor.toLowerCase()))
         return current ?? null
     }
 }
