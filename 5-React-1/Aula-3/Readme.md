@@ -1,0 +1,1 @@
+[Notion - Aula 3](https://vargasleticia.notion.site/Frontend-I-React-Atividades-Aula-3-139d5cb5c0f6481c93d7a1e5dc450645)
