@@ -8,6 +8,7 @@ export const CommentSty = styled.div`
     border-radius: 8px;
     box-shadow: 2px 3px 5px black;
     gap: 8px;
+    transition: 400ms;
     h3{
         padding: 4px 8px;
         width: 100%;
@@ -16,5 +17,9 @@ export const CommentSty = styled.div`
 
     p{
         padding: 2px 12px;
+    }
+
+    &:hover{
+        background-color: #d1d1d1;
     }
 `
