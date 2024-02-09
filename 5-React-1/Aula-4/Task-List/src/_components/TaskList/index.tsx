@@ -1,28 +1,31 @@
 import { Task } from "../../_entities/Task";
 import { TaskItem } from "../TaskItem";
-import { TableCell } from "../TaskItem/style";
+import { TableCell, TableHead } from "../TaskItem/style";
 import { Table } from "./style";
 
 type TaskListProp = {
     tasks: Task[];
-    onToggle: (taskId: number) => void;
-    onRemove: (taskId: number) => void;
+    onToggle: (taskId: string) => void;
+    onRemove: (taskId: string) => void;
+    onEditable: boolean
 }
 
-export const TaskList = ({tasks, onRemove, onToggle}:TaskListProp)=>{
+export const TaskList = ({tasks, onRemove, onToggle, onEditable}:TaskListProp)=>{
     return(
         <Table>
       <thead>
         <tr>
-          <TableCell>Tarefa</TableCell>
-          <TableCell>Data de Criação</TableCell>
-          <TableCell>Prazo</TableCell>
-          <TableCell>Ações</TableCell>
+          <TableHead></TableHead>
+          <TableHead>Tarefa</TableHead>
+          <TableHead>Data de Criação</TableHead>
+          <TableHead>Prazo</TableHead>
+          <TableHead>Ações</TableHead>
         </tr>
       </thead>
       <tbody>
         {tasks.map((task) => (
           <TaskItem
+            onEditable={onEditable}
             key={task.id}
             task={task}
             onToggle={onToggle}
